@@ -32,9 +32,8 @@ public class GamesServicesImple implements GamesServicesI{
 	}
 
 	@Override
-	public void addGames(Games game) {
-		gamesRepository.save(game);
-
+	public Games addGames(Games game) {
+		return gamesRepository.save(game);
 	}
 
 }

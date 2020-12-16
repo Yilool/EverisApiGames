@@ -8,7 +8,7 @@ public interface GamesServicesI {
 	/**
 	 * saca todos los juegos
 	 * 
-	 * @return List<Games>
+	 * @return Iterable<Games>
 	 */
 	public Iterable<Games> getAllGames();
 
@@ -16,7 +16,7 @@ public interface GamesServicesI {
 	 * saca los juegos por el id
 	 * 
 	 * @param id
-	 * @return List<Games>
+	 * @return Games
 	 */
 	public Games getGamesById(final int idGames);
 
@@ -32,5 +32,5 @@ public interface GamesServicesI {
 	 * 
 	 * @param game
 	 */
-	public void addGames(final Games game);
+	public Games addGames(final Games game);
 }
