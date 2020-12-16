@@ -1,7 +1,5 @@
 package com.everisapigame.EverisApiGames.Services;
 
-//Import de Java
-import java.util.List;
 //Import del proyecto
 import com.everisapigame.EverisApiGames.Entities.Games;
 
@@ -12,7 +10,7 @@ public interface GamesServicesI {
 	 * 
 	 * @return List<Games>
 	 */
-	public List<Games> getAllGames();
+	public Iterable<Games> getAllGames();
 
 	/**
 	 * saca los juegos por el id
@@ -20,7 +18,7 @@ public interface GamesServicesI {
 	 * @param id
 	 * @return List<Games>
 	 */
-	public List<Games> getGamesByIdGames(final int idGames);
+	public Games getGamesById(final int idGames);
 
 	/**
 	 * Elimina segun el id del juego

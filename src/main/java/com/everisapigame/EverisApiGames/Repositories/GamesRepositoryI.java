@@ -1,7 +1,5 @@
 package com.everisapigame.EverisApiGames.Repositories;
 
-//import de Java
-import java.util.List;
 //Import del proyecto
 import com.everisapigame.EverisApiGames.Entities.Games;
 //Import de Spring
@@ -16,5 +14,5 @@ public interface GamesRepositoryI extends JpaRepository<Games, Integer> {
 	 * @param id
 	 * @return list<Games>
 	 */
-	public List<Games> findByIdGames(final int idGames);
+	public Games findGamesById(final int idGames);
 }

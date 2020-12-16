@@ -1,7 +1,5 @@
 package com.everisapigame.EverisApiGames.Services;
 
-//import de Java
-import java.util.List;
 //Import de Spring
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,20 +9,20 @@ import com.everisapigame.EverisApiGames.Entities.Games;
 import com.everisapigame.EverisApiGames.Repositories.GamesRepositoryI;
 
 @Service
-public class GamesServicesImple implements GamesServicesI {
+public class GamesServicesImple implements GamesServicesI{
 
 	/** Repositorio: Games */
 	@Autowired
 	private GamesRepositoryI gamesRepository;
 
 	@Override
-	public List<Games> getAllGames() {
+	public Iterable<Games> getAllGames() {
 		return gamesRepository.findAll();
 	}
 
 	@Override
-	public List<Games> getGamesByIdGames(int idGames) {
-		return gamesRepository.findByIdGames(idGames);
+	public Games getGamesById(int idGames) {
+		return gamesRepository.findGamesById(idGames);
 	}
 
 	@Override
