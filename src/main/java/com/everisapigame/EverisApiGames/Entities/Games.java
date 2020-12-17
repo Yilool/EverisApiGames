@@ -1,5 +1,7 @@
 package com.everisapigame.EverisApiGames.Entities;
 
+import java.sql.Blob;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,14 +13,18 @@ public class Games {
 	
 	/**ID DEL JUEGO */
 	private Integer id;
-	/**tITULO DEL JUEGO */
+	/**TITULO DEL JUEGO */
 	private String title;
-	/**fECHA DE LANZAMIENTO */
+	/**FECHA DE LANZAMIENTO */
 	private String relDate;
 	/**CATEGORIA */
 	private String category;
 	/**GENERO DEL JUEGO */
 	private String gender;
+	/**IMG DEL JUEGO*/
+	private Blob picture;
+	private String fileName;
+	private Integer fileSize;
 	
 	//Constructors
 	
@@ -28,21 +34,24 @@ public class Games {
 	}
 
 	/**CONSTRUCTOR SIN GENERO */
-	public Games(Integer id, String title, String relDate, String category) {
+	public Games(Integer id, String title, String relDate, String category, String gender) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.relDate = relDate;
 		this.category = category;
+		this.gender = gender;
 	}
 	
 	/**CONSTRUCTOR COMPLETO */
-	public Games(Integer id, String title, String relDate, String category, String gender) {
+	public Games(Integer id, String title, String relDate, String category, Blob pic, String name, Integer size) {
 		this.id = id;
 		this.title = title;
 		this.relDate = relDate;
 		this.category = category;
-		this.gender = gender;
+		this.picture = pic;
+		this.fileName = name;
+		this.fileSize = size;
 	}
 	
 	//Getter and Setter
@@ -122,6 +131,28 @@ public class Games {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
 
+	public Blob getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Blob picture) {
+		this.picture = picture;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public Integer getFileSize() {
+		return fileSize;
+	}
+
+	public void setFileSize(Integer fileSize) {
+		this.fileSize = fileSize;
+	}
 }

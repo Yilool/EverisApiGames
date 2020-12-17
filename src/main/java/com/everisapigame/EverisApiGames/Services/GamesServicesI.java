@@ -1,5 +1,7 @@
 package com.everisapigame.EverisApiGames.Services;
 
+import org.springframework.web.multipart.MultipartFile;
+
 //Import del proyecto
 import com.everisapigame.EverisApiGames.Entities.Games;
 
@@ -32,5 +34,5 @@ public interface GamesServicesI {
 	 * 
 	 * @param game
 	 */
-	public Games addGames(final Games game);
+	public Games addGames(Games game,  MultipartFile img);
 }
